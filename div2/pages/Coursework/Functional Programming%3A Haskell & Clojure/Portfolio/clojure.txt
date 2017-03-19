@@ -1,0 +1,147 @@
+; chapter 4
+
+
+;-------------1)
+(defn ispal [xs]
+	(if (= xs ()) true
+		(if (= (first xs) (last xs))
+			(ispal (drop 1 (drop-last 1 xs)))
+			false
+		)
+	)
+)
+
+;-------------2)
+(defn ccount [xs]
+	(if (first xs)
+		(if (= (first xs) \c)
+			(+ 1 (ccount (rest xs)))
+			(ccount (rest xs))
+		)
+		0
+	)
+)
+
+;-------------3)
+(defn myfilter [f xs]
+	(if (last xs)
+		(if (f (last xs))
+			(conj (myfilter f (drop-last 1 xs)) (last xs))
+			(myfilter f (drop-last 1 xs))
+		)
+	[]
+	)
+)
+
+;-------------4)
+(defn primes-below [n]
+	(sieve n (drop 2 (take n (iterate inc 0)))))
+
+(defn sieve [n xs]
+	(if (> (* (first xs) (first xs)) n)
+		xs
+		(cons (first xs) (sieve n (map * (repeat (first xs))
+							(remove integer?
+								(map / (rest xs) (repeat (first xs)))))))))
+
+;chapter 5
+
+;-------------1)
+(defn schedule [hour]
+	(case hour
+		0 :tumblr
+		1 :tumblr
+		2 :sleeping
+		3 :sleeping
+		4 :sleeping
+		5 :sleeping
+		6 :sleeping
+		7 :sleeping
+		8 :sleeping
+		9 :sleeping
+		10 :sleeping
+		11 :sleeping
+		12 :class
+		13 :class
+		14 :nothing
+		15 :nothing
+		16 :class
+		17 :class
+		18 :dinner
+		19 :dinner
+		20 :homework
+		21 :homework
+		22 :homework
+		23 :homework))
+
+;-------------2)
+(defn pal [xs]
+	(if (= xs ()) 1
+		(if (= (first xs) (last xs))
+			(->>
+				(drop-last 1 xs)
+				(drop 1)
+				(pal)
+			)
+			0
+		)
+	)
+)
+
+(defn palsbelow [n]
+	(->>
+		(range n)
+		(map str)
+		(map pal)
+		(reduce +)
+	)
+)
+
+
+;-------------3)
+(defmacro id [fun & args]
+	`(~fun ~@args))
+
+;-------------4)
+;Write a macro log which uses a var, logging-enabled, to determine whether or not to print an expression to the console at compile time. If logging-enabled is false, (log :hi) should macroexpand to nil. If logging-enabled is true, (log :hi) should macroexpand to (prn :hi). Why would you want to do this check during compilation, instead of when running the program? What might you lose?
+;?????
+
+;-------------5)
+(defmacro exact
+	[expr]
+	(let [f (nth expr 0) x (nth expr 1) y (nth expr 2)]
+		`(~f (rationalize ~x) (rationalize ~y))))
+
+
+;Chapter 6
+
+(defn sum [start end] (reduce + (range start end)))
+
+;-------------2)
+(defmacro myfuture
+	[expr]
+	`(do
+		(def x (~promise))
+		(->
+		(fn [] (deliver x (expr)))
+		(Thread.)
+		(.start)
+		)
+	)
+)
+
+;-------------3)
+(defn splitsum []
+(+
+(->>
+	(/ 1e7 2)
+	(sum 0)
+	(future)
+	(deref)
+)
+(->
+	(/ 1e7 2)
+	(sum 1e7)
+	(future)
+	(deref)
+)))

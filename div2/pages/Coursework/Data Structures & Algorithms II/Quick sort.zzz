@@ -1,0 +1,1 @@
+Implementation of quick sort in Python. Quick sort operates on a "pivot" mechanism - pick an element from the list at random, and move all elements greater than it after it, and all elements lower than it before it. The randomly picked element is now in the correct position, and you can recursively apply quick sort to the items before and after that element.

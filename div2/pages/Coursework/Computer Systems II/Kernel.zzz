@@ -1,0 +1,1 @@
+A basic kernel implemented in assembly. This was our final project, done in two steps, and it's fairly massive. "Kernel assignment" 1 and 2 are descriptions of what we were supposed to implement. I finished almost all of it, though I didn't quite getting printing to work in user-level programs.

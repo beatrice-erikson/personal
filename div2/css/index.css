@@ -1,0 +1,176 @@
+.header {
+	background-color: Gray;
+	color: white;
+	margin-bottom: 20px;
+	border-bottom: 4px groove Gray;
+}
+.header > * {
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+}
+.header table {
+	color: white;
+	text-align: center;
+	margin: 0 auto;
+	border-collapse: collapse;
+}
+.header table td {
+	border: 1px solid DarkGray;
+}
+.header table * {
+	padding: 5px 10px;
+}
+.header table th {
+	padding-left: 0px;
+}
+span.bar:before {
+	content:"";
+	height: 1px;
+	width: 25%;
+	background-color: LightGray;
+	display: block;
+	margin: 5px auto;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	background-color: rgb(100,100,100);
+}
+
+.courses a{
+	color: rgb(15,15,15);
+	text-decoration: underline;
+}
+.courses a:hover {
+	color: rgb(100,100,100);
+	background-color: initial;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	padding-bottom: 25px;
+}
+
+.rsessay, .contract, .cel2, .mcpessay {
+	width: 75%;
+	margin-left: 5%;
+}
+
+div p {
+	text-align: left;
+}
+
+nav {
+	max-width: 500px;
+}
+
+nav ul {
+	padding: 0;
+	margin: 0;
+	background-color: Gray;
+}
+nav li {
+	display: inline;
+	position: relative;
+}
+nav li li {
+	display: block;
+}
+
+nav ul.subnav {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	border: 2px solid rgb(44,44,44);
+	outline: 2px solid Gray;
+	border-top: 0;
+	z-index: 1000;
+}
+nav li:hover ul {
+	display: block;
+	float: left;
+}
+
+table.cel2 {
+	
+}
+
+table.courses {
+	margin-left: 5%;
+	width: 80%;
+}
+.semester td{
+	vertical-align: top;
+	text-align: center;
+}
+.semester td:nth-of-type(2) {
+	width: 50%;
+	border-left: 1px solid Gray;
+}
+
+h3, h4 {
+	margin-bottom: 5px;
+	margin-top: 0px;
+}
+
+th > h3, th > h4 {
+	margin-top: 5px;
+	vertical-align: bottom;
+}
+
+span.eval {
+	width: 100%;
+}
+span.title:before {
+	content:"";
+	height: 1px;
+	width: 75%;
+	background-color: Gray;
+	display: block;
+	margin: auto;
+}
+
+span.title:after {
+	content:"";
+	height: 1px;
+	width: 10%;
+	background-color: Gray;
+	display: block;
+	margin: auto;
+}
+
+p:first-child {
+	margin-top: 0px;
+}
+
+table.semester {
+	border: 2px solid Gray;
+	border-collapse: collapse;
+	width: 75%;
+	margin: 0 auto;
+	background: LightGray;
+	outline: LightGray solid 2px;
+}
+table.course h3 {
+	text-align: left;
+}
+table.course td:first-of-type {
+	width: 150px;
+}
+table.course td {
+	border-top: 1px solid Gray;
+	border-bottom: 1px solid Gray;
+}
+
+table.course, table.course * {
+	border-collapse: collapse;
+}
+
+.cel2 table {
+	text-align: left;
+}

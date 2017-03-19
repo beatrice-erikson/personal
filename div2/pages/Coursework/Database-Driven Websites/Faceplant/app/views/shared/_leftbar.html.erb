@@ -1,0 +1,27 @@
+<div id="leftbar">
+	<table id="friendlist">
+		<tr><th colspan="2">Your friends</th></tr>
+		<% for friend in current_user.friends %>
+			<tr><td>&nbsp;&nbsp;<%= link_to friend.username, '/' + friend.username %></td><td></td></tr>
+		<% end %>
+	</table>
+	<table id="requestlist">
+		<% unless current_user.pending_invited_by.empty? %>
+			<tr><th colspan="2">Friend Requests</th></tr>
+			<% for friend in current_user.pending_invited_by %>
+				<tr>
+					<td>&nbsp;&nbsp;<%= link_to friend.username, '/' + friend.username %></td>
+					<td><%= button_to "Accept", friendships_path(:friend_id => friend.id), :method => :post %></td>
+				</tr>
+			<% end %>
+		<% end %>
+	</table>
+	<table id="requestedlist">
+		<% unless current_user.pending_invited.empty? %>
+			<tr><th colspan="2">Sent Requests</th></tr>
+			<% for friend in current_user.pending_invited %>
+				<tr><td>&nbsp;&nbsp;<%= link_to friend.username, '/' + friend.username %></td><td></td></tr>
+			<% end %>
+		<% end %>
+	</table>
+</div>

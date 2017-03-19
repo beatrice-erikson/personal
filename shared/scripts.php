@@ -1,0 +1,1 @@
+<script src ="/~bmc12/js/jquery.min.js"></script>

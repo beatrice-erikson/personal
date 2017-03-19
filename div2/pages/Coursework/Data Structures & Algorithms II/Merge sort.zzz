@@ -1,0 +1,2 @@
+This is an implementation of merge sort in Python. Essentially, if you have an unsorted list, you can cut it in half and sort each half, and then merge upwards - for example, if your two lists are 1,3 and 2,4, you compare 1 and 2, put 1 at the start of your list, compare 2 and 3, etc, until you have 1,2,3,4.
+However, there's no reason to not keep splitting the lists. Merge sort does exactly that, splitting the list in half until each one is only a single element (at which point it is sorted by definition), and then merging up until the whole list is sorted.

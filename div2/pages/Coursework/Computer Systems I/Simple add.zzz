@@ -1,0 +1,1 @@
+Simple adding program implemented in machine code. Each two-digit hex value is a command, such as "set register %G0 to this value" or "add %G0 and %G1 and store the result in %G0."

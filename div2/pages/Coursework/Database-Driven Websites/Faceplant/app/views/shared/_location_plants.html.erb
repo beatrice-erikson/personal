@@ -1,0 +1,10 @@
+<h1><%= @location.name %></h1>
+<%= @location.description %><br>
+<%= @location.current %><br>
+<%= @location.user.username %><br><br>
+
+<% for plant in @location.plants %>
+	<%= plant.name %><br>
+	<%= plant.pot.desc %><br>
+	<%= plant.description %><br><br>
+<% end %>

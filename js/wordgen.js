@@ -1,0 +1,17 @@
+var main = function () {
+    $('.wordbtn').click(function () {
+		var l1 = [[["advert", "isement"], ["an image or video message", "designed to help sell a product or make an announcement"]], [["comp", "uter"], ["a complex general-purpose electronic device", "that can store and work with large amounts of information"]], [["lang", "uage"], ["a system of words or signs", "used to express thoughts and feelings"]], [["strat", "egy"], ["a careful plan or method", "for achieving a particular goal, usually over a long period of time"]], [["umb", "rella"], ["a circular canopy on a folding frame", "used for protection from the rain and sun"]], [["trump", "et"], ["a brass musical instrument", "consisting of a flared bell and air valves"]], [["muff", "in"], ["a small domed cake or quick bread", "made with batter or dough"]], [["refrig", "erator"], ["a large household appliance", "used to keep food cold"]], [["telev", "ision"], ["an entertainment device", "that recieves and plays video transmissions"]], [["chick", "en"], ["a small feathered bird", "that lays eggs multiple times per day"]], [["mag", "net"], ["a piece of iron (or an ore, alloy, or other material)", "able to attract certain metals"]], [["pant", "aloons"], ["a common garment", "worn on the lower half of the body"]], [["gaz", "ebo"], ["a small open-air building", "found in gardens and parks"]], [["mon", "archy"], ["a form of government", "ruled over by a monarch"]], [["peng", "uin"], ["a flightless arctic bird", "with flippers for swimming underwater"]], [["dinos", "aur"], ["one of many reptiles","that existed on earth millions of years ago"]], [["sand", "al"], ["a popular lightweight shoe","held in place with straps around the foot"]], [["cow", "lick"], ["a small patch of hair","that will not lay flat"]], [["eleph", "ant"], ["a very large gray animal","that has a long, flexible nose and two long tusks"]], [["relig", "ion"], ["an organized system of beliefs, ceremonies, and rules","used to worship a god or a group of gods"]], [["coff", "ee"], ["a bitter drink, usually served hot,", "made from beans crushed into a powder"]], [["nuc", "leus"], ["a specialized, usually spherical mass of protoplasm", "found in most living eukaryotic cells"]], [["squir", "rel"], ["a small, furry, gray mammal,", "known for storing nuts underground for the winter"]], [["flann", "el"], ["a soft, napped, woollen fabric", "used for sleepwear, undergarments, and sheets"]], [["wind", "ow"], ["an opening, generally covered in glass,", "used to let in air or light"]], [["astrol", "ogy"], ["a way of studying the stars and planets", "which reveals information about the future"]], [["avoc", "ado"], ["a large, usually pear-shaped fruit,", "with green to blackish skin and soft, light-green pulp"]], [["cinn", "amon"], ["a common culinary spice", "commonly used in french toast and to top hot drinks"]], [["panor", "ama"], ["a 360 degree view of an area", "captured by turning in place"]], [["ques", "adilla"], ["a toasted tortilla with cheese,", "often filled with beans, onions, or chilies"]]]
+        var choose = function (phrase) {
+            var index = Math.round(Math.random() * (phrase.length - 1));
+            return phrase[index];
+        };
+		var w1 = choose(l1)
+		var w2 = choose(l1)
+		while (w1 == w2) {
+			w2 = choose(l1)
+		}
+        var output = w1[0][0] + w2[0][1] + ": " + w1[1][0] + " " + w2[1][1];
+        $('.wordgen').text(output);
+    });
+};
+$(document).ready(main);

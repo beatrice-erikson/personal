@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FacePlant</title>
+  <%= favicon_link_tag       source='favicon.ico' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="header">
+	<div id="logo">
+		<%= link_to image_tag('logo.png', :class => "logo"), '/' %>
+	</div>
+	<% if current_user %>
+			<%= link_to "", '/water', :id => "watericon" %>
+			<%= link_to "", '/plants', :id => "planticon" %>
+			<span id = "vertical">
+				Signed in as <%= link_to current_user.username, '/'+current_user.username, :class => "header" %> | <%= link_to "Logout", '/logout', :class => "header" %>
+		<% else %>
+			<span id = "vertical">
+				<%= link_to "Login", '/login', :class => "header" %> | <%= link_to "Signup", '/signup', :class => "header" %>
+		<% end %>
+			</span>
+</div>
+
+<table id="main">
+	<% if current_user %>
+		<td id="leftbar"><%= render "shared/leftbar" %></td>
+		<td class="divider"></td>
+	<% end %>
+	<td id="view"><%= yield %></td></tr>
+</table>
+
+</body>
+</html>

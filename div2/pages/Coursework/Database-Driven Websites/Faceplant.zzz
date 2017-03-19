@@ -1,0 +1,28 @@
+This is a website I implemented in Rails over the course of a semester. Since I don't have a way to host it, I'm including the files that I use to run it (I'm more than happy to show/explain the site during a meeting, also).<br />
+Notable files include:<br />
+<table>
+	<tr>
+		<td>/config/routes.rb</td>
+		<td>This contains all of the routing information - which files the website serves at various urls</td>
+	</tr>
+	<tr>
+		<td>/db/seeds.rb</td>
+		<td>This file populates some of the databases with initial values. I used it for plant genuses/species/cultivars.</td>
+	</tr>
+	<tr>
+		<td>/db/migrate/</td>
+		<td>These are the files that rails runs to create the initial databases, their fields, their relationships, etc.</td>
+	</tr>
+	<tr>
+		<td>/app/controllers/</td>
+		<td>These define different actions. For example, in pots_controller.rb, index, show, and new are all associated with pages, and set variables those pages use. Create is an action that gets called from the 'new' page.</td>
+	</tr>
+	<tr>
+		<td>/app/models/</td>
+		<td>This is the most interesting folder, probably, from a database-driven website perspective. Each of these files defines how the different tables relate to each other, what validations are placed on different fields, etc. Particularly, look at plant.rb, pot.rb, picture.rb, and user.rb for a good variety of usage examples.</td>
+	</tr>
+	<tr>
+		<td>/app/views/</td>
+		<td>These are all the code for the actual pages. They're mostly .html.erb files (files with ruby code in them, which are made into html files before being served). Particularly, look at /plants/new.html.erb (this is the page represented by Faceplant_example) and /shared/_leftbar.html.erb</td>
+	</tr>
+</table>

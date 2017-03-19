@@ -1,0 +1,41 @@
+<h1>New pot entry</h1>
+<%= form_for :pot, url: '/pots' do |f| %>
+
+	<% if @pot.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@pot.errors.count, "error") %> must be corrected to create this entry:
+      </h2>
+      <ul>
+        <% @pot.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :width %><br>
+    <%= f.text_field :width %><br>
+	(Numbers only; inches)<br>
+  </p>
+
+  <p>
+    <%= f.label :height %><br>
+    <%= f.text_field :height %><br>
+	(Numbers only; inches)<br>
+  </p>
+  
+  <p>
+	<%= f.label :color %><br>
+	<%= f.select(:color, [['black', 'black'],['blue', 'blue'], ['brown', 'brown'], ['gray', 'gray'], ['green', 'green'], ['orange', 'orange'], ['pink', 'pink'], ['purple', 'purple'], ['red', 'red'], ['white', 'white'], ['yellow', 'yellow']]) %><br>
+  </p>
+  
+  <p>
+	<%= f.label :material %><br>
+	<%= f.text_field :material %><br>
+
+	<p>
+    <%= f.submit :value => "Add Pot" %>
+  </p>
+<% end %>

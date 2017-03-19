@@ -1,0 +1,1 @@
+Simple adding program which utilizes main memory, implemented in machine code. Each hex value is a single command. The notable thing about this particular assignment is the last three values: 00 15 03. 00 is "halt," and the program doesn't run past there - earlier commands access that specific place in memory - 15 and 03 are values that this program adds.

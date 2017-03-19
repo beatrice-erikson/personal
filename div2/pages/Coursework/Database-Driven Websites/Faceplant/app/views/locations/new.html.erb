@@ -1,0 +1,31 @@
+<h1>New location entry</h1>
+<%= form_for :location, url: '/locations' do |f| %>
+
+	<% if @location.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@location.errors.count, "error") %> must be corrected to create this entry:
+      </h2>
+      <ul>
+        <% @location.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+	1-16 characters, must contain one letter. Primarily letters, but may use spaces and dashes as separators.
+  </p>
+  
+  <p>
+	<%= f.label :description %>
+	<%= f.text_area :description %>
+  </p>
+  
+  <p>
+    <%= f.submit :value => "Add Location" %>
+  </p>
+<% end %>
